@@ -2,8 +2,6 @@ import { Link, useLocation } from "react-router-dom";
 import { useState } from "react";
 import { Menu, X, Shield, Phone } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import logo from "../assets/logo.png";
-import { log } from "console";
 
 const navLinks = [
   { name: "Home", href: "/" },
@@ -27,7 +25,6 @@ export function Header() {
             to="/"
             className="flex items-center gap-2 transition-opacity hover:opacity-80"
           >
-         
             <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-primary">
               <Shield className="h-6 w-6 text-primary-foreground" />
             </div>
@@ -107,7 +104,7 @@ export function Header() {
                 className="flex items-center gap-2 text-sm font-medium text-foreground"
               >
                 <Phone className="h-4 w-4 text-primary" />
-                <span>0123 456 7890</span>
+                <span>+252 612121368 </span>
               </a>
               <Button asChild className="w-full">
                 <Link to="/contact">Get a Quote</Link>
