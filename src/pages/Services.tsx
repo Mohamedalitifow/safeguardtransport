@@ -176,7 +176,7 @@ export default function ServicesPage() {
               We understand that every passenger and organisation has unique needs. Contact us to discuss how we can tailor our services to you.
             </p>
             <div className="flex flex-col gap-4 sm:flex-row sm:justify-center">
-              <Button asChild size="lg" className="bg-accent text-accent-foreground hover:bg-accent/90 shadow-lg hover:shadow-xl transition-all duration-300">
+              <Button asChild size="lg" className="bg-card text-secondary hover:bg-card/90">
                 <Link to="/contact">Contact Us</Link>
               </Button>
               <Button asChild size="lg" variant="ghost" className="text-secondary-foreground border-2 border-secondary-foreground/30 hover:bg-secondary-foreground/10">

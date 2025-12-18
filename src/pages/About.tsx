@@ -183,7 +183,7 @@ export default function AboutPage() {
               Experience the difference of transport services built on trust, care, and professionalism.
             </p>
             <div className="flex flex-col gap-4 sm:flex-row sm:justify-center">
-              <Button asChild size="lg" className="bg-accent text-accent-foreground hover:bg-accent/90 shadow-lg hover:shadow-xl transition-all duration-300">
+              <Button asChild size="lg" className="bg-card text-primary hover:bg-card/90">
                 <Link to="/contact">Get in Touch</Link>
               </Button>
               <Button asChild size="lg" variant="ghost" className="text-primary-foreground border-2 border-primary-foreground/30 hover:bg-primary-foreground/10">

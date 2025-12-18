@@ -387,7 +387,7 @@ export default function HomePage() {
               <Button
                 asChild
                 size="xl"
-                className="bg-accent text-accent-foreground hover:bg-accent/90 shadow-2xl hover:shadow-3xl hover:scale-105 transition-all duration-300"
+                className="bg-card text-primary hover:bg-card/90"
               >
                 <Link to="/contact">
                   Contact Us Now

@@ -302,7 +302,7 @@ export default function ContactPage() {
             <Button
               asChild
               size="xl"
-              className="bg-accent text-accent-foreground hover:bg-accent/90 shadow-lg hover:shadow-xl transition-all duration-300"
+              className="bg-card text-primary hover:bg-card/90"
             >
               <a href="tel:+441234567890">
                 <HiPhone className="h-5 w-5" />

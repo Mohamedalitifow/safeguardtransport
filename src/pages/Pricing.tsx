@@ -255,7 +255,7 @@ export default function PricingPage() {
             <p className="text-lg text-secondary-foreground/90 mb-8">
               Contact us today for a free, no-obligation quote. We're here to help find the right solution for you.
             </p>
-            <Button asChild size="lg" className="bg-accent text-accent-foreground hover:bg-accent/90 shadow-lg hover:shadow-xl transition-all duration-300">
+            <Button asChild size="lg" className="bg-card text-secondary hover:bg-card/90">
               <Link to="/contact">
                 Contact Us Now
                 <HiArrowRight className="h-5 w-5" />

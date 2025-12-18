@@ -208,7 +208,7 @@ export default function SafetyPage() {
             <p className="text-lg text-primary-foreground/90 mb-8">
               Experience the peace of mind that comes with knowing your loved ones are in safe hands. Contact us today to learn more about our safety commitment.
             </p>
-            <Button asChild size="lg" className="bg-accent text-accent-foreground hover:bg-accent/90 shadow-lg hover:shadow-xl transition-all duration-300">
+            <Button asChild size="lg" className="bg-card text-primary hover:bg-card/90">
               <Link to="/contact">
                 Get in Touch
                 <HiArrowRight className="h-5 w-5" />
