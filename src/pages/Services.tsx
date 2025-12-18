@@ -1,14 +1,14 @@
 import { Link } from "react-router-dom";
 import {
-  GraduationCap,
-  Accessibility,
-  UserCheck,
-  Building2,
-  Users,
-  FileText,
-  ArrowRight,
-  CheckCircle,
-} from "lucide-react";
+  HiAcademicCap,
+  HiUserGroup,
+  HiUserCircle,
+  HiOfficeBuilding,
+  HiUsers,
+  HiDocumentText,
+  HiArrowRight,
+  HiCheckCircle,
+} from "react-icons/hi";
 import { Button } from "@/components/ui/button";
 import { SEOHead } from "@/components/SEOHead";
 import { Layout } from "@/components/Layout";
@@ -16,7 +16,7 @@ import { Layout } from "@/components/Layout";
 const services = [
   {
     id: "school",
-    icon: GraduationCap,
+    icon: HiAcademicCap,
     title: "Home-to-School Transport",
     description: "Reliable daily transport for students of all ages, with consistent routines and trained drivers who understand the importance of punctuality.",
     features: [
@@ -29,7 +29,7 @@ const services = [
   },
   {
     id: "send",
-    icon: Accessibility,
+    icon: HiUserGroup,
     title: "SEND & Additional Needs Transport",
     description: "Specialist transport for passengers with special educational needs and disabilities. Our trained staff understand individual requirements and provide compassionate support.",
     features: [
@@ -42,7 +42,7 @@ const services = [
   },
   {
     id: "elderly",
-    icon: UserCheck,
+    icon: HiUserCircle,
     title: "Elderly Assisted Transport",
     description: "Dignified and comfortable transport for elderly passengers, with patient drivers trained to provide mobility assistance and compassionate care.",
     features: [
@@ -55,7 +55,7 @@ const services = [
   },
   {
     id: "medical",
-    icon: Building2,
+    icon: HiOfficeBuilding,
     title: "Hospital & Medical Appointment Transport",
     description: "Reliable transport to and from medical appointments, ensuring patients arrive on time and in comfort for their healthcare needs.",
     features: [
@@ -68,7 +68,7 @@ const services = [
   },
   {
     id: "community",
-    icon: Users,
+    icon: HiUsers,
     title: "Community & Group Transport",
     description: "Flexible transport solutions for community groups, day centres, and organisations requiring reliable group travel.",
     features: [
@@ -81,7 +81,7 @@ const services = [
   },
   {
     id: "contracts",
-    icon: FileText,
+    icon: HiDocumentText,
     title: "Contracted Transport Solutions",
     description: "Tailored transport contracts for schools, councils, and organisations requiring ongoing, reliable transport services.",
     features: [
@@ -108,7 +108,7 @@ export default function ServicesPage() {
         <div className="container-custom">
           <div className="mx-auto max-w-3xl text-center animate-fade-up">
             <div className="inline-flex items-center gap-2 rounded-full bg-primary/10 px-4 py-2 text-sm font-medium text-primary mb-6">
-              <Accessibility className="h-4 w-4" />
+              <HiUserGroup className="h-4 w-4" />
               Comprehensive Solutions
             </div>
             <h1 className="text-4xl font-bold text-foreground sm:text-5xl mb-6">
@@ -144,7 +144,7 @@ export default function ServicesPage() {
                   <Button asChild size="lg">
                     <Link to="/contact">
                       Enquire Now
-                      <ArrowRight className="h-5 w-5" />
+                      <HiArrowRight className="h-5 w-5" />
                     </Link>
                   </Button>
                 </div>
@@ -153,7 +153,7 @@ export default function ServicesPage() {
                   <ul className="space-y-3">
                     {service.features.map((feature) => (
                       <li key={feature} className="flex items-start gap-3">
-                        <CheckCircle className="h-5 w-5 shrink-0 text-secondary mt-0.5" />
+                        <HiCheckCircle className="h-5 w-5 shrink-0 text-secondary mt-0.5" />
                         <span className="text-muted-foreground">{feature}</span>
                       </li>
                     ))}
@@ -176,7 +176,7 @@ export default function ServicesPage() {
               We understand that every passenger and organisation has unique needs. Contact us to discuss how we can tailor our services to you.
             </p>
             <div className="flex flex-col gap-4 sm:flex-row sm:justify-center">
-              <Button asChild size="lg" className="bg-card text-secondary hover:bg-card/90">
+              <Button asChild size="lg" className="bg-accent text-accent-foreground hover:bg-accent/90 shadow-lg hover:shadow-xl transition-all duration-300">
                 <Link to="/contact">Contact Us</Link>
               </Button>
               <Button asChild size="lg" variant="ghost" className="text-secondary-foreground border-2 border-secondary-foreground/30 hover:bg-secondary-foreground/10">

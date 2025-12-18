@@ -1,42 +1,42 @@
 import { Link } from "react-router-dom";
 import {
-  Shield,
-  CheckCircle,
-  Users,
-  Clock,
-  Heart,
-  ArrowRight,
-  GraduationCap,
-  Accessibility,
-  UserCheck,
-  Building2,
-  Star,
-} from "lucide-react";
+  HiShieldCheck,
+  HiCheckCircle,
+  HiUsers,
+  HiClock,
+  HiHeart,
+  HiArrowRight,
+  HiAcademicCap,
+  HiUserGroup,
+  HiUserCircle,
+  HiOfficeBuilding,
+  HiStar,
+} from "react-icons/hi";
 import { Button } from "@/components/ui/button";
 import { SEOHead } from "@/components/SEOHead";
 import { Layout } from "@/components/Layout";
-import heroImage from "@/assets/hero-transport.jpg";
+import heroImage from "@/assets/herosection.jpeg";
 
 const features = [
   {
-    icon: Users,
+    icon: HiUsers,
     title: "Specialists in Daily Travel",
     description:
       "Expert scheduled transport for students, elderly, and SEND passengers",
   },
   {
-    icon: Shield,
+    icon: HiShieldCheck,
     title: "DBS-Checked Drivers",
     description: "All drivers enhanced DBS checked and professionally trained",
   },
   {
-    icon: Clock,
+    icon: HiClock,
     title: "Clear Communication",
     description:
       "Predictable routines and transparent updates for peace of mind",
   },
   {
-    icon: Heart,
+    icon: HiHeart,
     title: "Compassionate Care",
     description:
       "Every passenger treated with dignity, respect, and professionalism",
@@ -44,10 +44,10 @@ const features = [
 ];
 
 const services = [
-  { icon: GraduationCap, name: "Home-to-School", href: "/services#school" },
-  { icon: Accessibility, name: "SEND Transport", href: "/services#send" },
-  { icon: UserCheck, name: "Elderly Assisted", href: "/services#elderly" },
-  { icon: Building2, name: "Medical Appointments", href: "/services#medical" },
+  { icon: HiAcademicCap, name: "Home-to-School", href: "/services#school" },
+  { icon: HiUserGroup, name: "SEND Transport", href: "/services#send" },
+  { icon: HiUserCircle, name: "Elderly Assisted", href: "/services#elderly" },
+  { icon: HiOfficeBuilding, name: "Medical Appointments", href: "/services#medical" },
 ];
 
 const testimonials = [
@@ -81,154 +81,132 @@ export default function HomePage() {
       />
 
       {/* Hero Section */}
-      <section className="relative min-h-[90vh] flex items-center overflow-hidden">
-        {/* Background Image with Overlay */}
-        <div className="absolute inset-0">
-          <img
-            src={heroImage}
-            alt="SafeGuard Transport fleet"
-            className="w-full h-full object-cover"
+      <section className="relative min-h-screen flex items-center overflow-hidden bg-gradient-to-br from-primary via-primary/90 to-secondary">
+        {/* Elegant Background Overlay */}
+        <div className="absolute inset-0 bg-[linear-gradient(135deg,rgba(255,255,255,0.1)_0%,rgba(255,255,255,0)_50%,rgba(255,255,255,0.05)_100%)]" />
+        
+        {/* Subtle Grid Pattern */}
+        <div className="absolute inset-0 opacity-[0.03]">
+          <div 
+            className="absolute inset-0" 
+            style={{
+              backgroundImage: `linear-gradient(rgba(255,255,255,0.1)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.1)_1px,transparent_1px)`,
+              backgroundSize: '60px 60px'
+            }} 
           />
-          <div className="absolute inset-0 bg-gradient-to-r from-foreground/95 via-foreground/80 to-foreground/40" />
-          <div className="absolute inset-0 bg-gradient-to-t from-foreground/60 via-transparent to-transparent" />
         </div>
 
-        {/* Floating Decorative Elements */}
-        <div className="absolute top-20 right-[10%] w-72 h-72 bg-primary/20 rounded-full blur-3xl animate-pulse" />
-        <div
-          className="absolute bottom-20 left-[5%] w-96 h-96 bg-secondary/15 rounded-full blur-3xl animate-pulse"
-          style={{ animationDelay: "1s" }}
+        {/* Refined Floating Orbs */}
+        <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-white/5 rounded-full blur-[100px] animate-pulse" />
+        <div 
+          className="absolute bottom-0 left-0 w-[400px] h-[400px] bg-secondary/10 rounded-full blur-[100px] animate-pulse" 
+          style={{ animationDelay: "1.5s" }} 
         />
 
-        <div className="container-custom relative z-10">
-          <div className="grid lg:grid-cols-2 gap-12 items-center">
-            {/* Content */}
-            <div className=" animate-fade-up">
-              <div className="inline-flex items-center mt-10 gap-2 rounded-full bg-primary-foreground backdrop-blur-sm border border-primary/30 px-5 py-2.5 text-sm font-semibold text-blue-900">
-                <Shield className="h-4 w-4 text-primary" />
-                Trusted by 500+ Families
+        <div className="container-custom relative z-10 py-16 md:py-24">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-16 lg:gap-20 items-center">
+            {/* Left Column: Text Content */}
+            <div className="text-center md:text-left space-y-8">
+              {/* Premium Badge */}
+              <div className="inline-flex items-center gap-2.5 rounded-full bg-white/10 backdrop-blur-xl border border-white/20 px-6 py-3 text-sm font-semibold text-white shadow-xl animate-fade-up">
+                <div className="flex h-6 w-6 items-center justify-center rounded-full bg-white/20">
+                  <HiShieldCheck className="h-3.5 w-3.5" />
+                </div>
+                <span className="tracking-wide">Trusted by 500+ Families Across London</span>
               </div>
 
-              <h1 className="text-5xl sm:text-6xl lg:text-7xl font-bold tracking-tight text-primary-foreground leading-[1.1]">
-                SafeGuard
-                <span className="block text-primary mt-2">Transport</span>
-              </h1>
+              {/* Main Heading with Enhanced Typography */}
+              <div className="space-y-4 animate-fade-up" style={{ animationDelay: "0.1s" }}>
+                <h1 className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-bold tracking-tight text-white leading-[1.05]">
+                  SafeGuard
+                  <span className="block mt-3 bg-gradient-to-r from-white via-white/95 to-white/80 bg-clip-text text-transparent">
+                    Transport
+                  </span>
+                </h1>
+              </div>
 
-              <p className="text-2xl sm:text-3xl font-medium text-primary-foreground/90 italic">
-                Where Safety Meets the Journey.
+              {/* Elegant Subtitle */}
+              <p className="text-2xl sm:text-3xl md:text-4xl font-light text-white/95 leading-tight animate-fade-up" style={{ animationDelay: "0.2s" }}>
+                Where Safety Meets the Journey
               </p>
 
-              <p className="text-lg text-primary-foreground/80 max-w-xl leading-relaxed">
-                Professional, DBS-checked transport for students, SEND
-                passengers, elderly individuals, and medical appointments across
-                London. Every journey with dignity and care.
+              {/* Refined Description */}
+              <p className="text-lg sm:text-xl md:text-xl text-white/85 leading-relaxed max-w-xl md:max-w-none animate-fade-up" style={{ animationDelay: "0.3s" }}>
+                Professional, DBS-checked transport for students, SEND passengers, 
+                elderly individuals, and medical appointments across London. 
+                Every journey with dignity and care.
               </p>
 
-              <div className="flex flex-col sm:flex-row gap-4 pt-4">
+              {/* Premium CTA Buttons */}
+              <div className="flex flex-col sm:flex-row gap-4 justify-center md:justify-start pt-4 animate-fade-up" style={{ animationDelay: "0.4s" }}>
                 <Button
                   asChild
                   size="xl"
-                  className="bg-primary hover:bg-primary/90 text-primary-foreground shadow-xl hover:shadow-2xl hover:-translate-y-1 transition-all duration-300"
+                  className="group bg-white text-primary hover:bg-white/95 shadow-2xl hover:shadow-[0_20px_50px_rgba(0,0,0,0.3)] hover:scale-[1.02] transition-all duration-300 rounded-full px-8 py-6 md:px-10 md:py-7 text-base md:text-lg font-semibold"
                 >
-                  <Link to="/contact">
+                  <Link to="/contact" className="flex items-center">
                     Get a Free Quote
-                    <ArrowRight className="h-5 w-5" />
+                    <HiArrowRight className="h-5 w-5 ml-2 group-hover:translate-x-1 transition-transform" />
                   </Link>
                 </Button>
                 <Button
                   asChild
                   size="xl"
-                  variant="ghost"
-                  className="bg-primary-foreground/10 backdrop-blur-sm text-primary-foreground border-2 border-primary-foreground/20 hover:bg-primary-foreground/20 hover:-translate-y-1 transition-all duration-300"
+                  variant="outline"
+                  className="bg-white/5 backdrop-blur-md border-2 border-white/30 text-white hover:bg-white/10 hover:border-white/40 rounded-full px-8 py-6 md:px-10 md:py-7 text-base md:text-lg font-semibold transition-all duration-300"
                 >
                   <Link to="/services">Our Services</Link>
                 </Button>
               </div>
+
+              {/* Premium Trust Indicators */}
+              <div className="flex flex-wrap items-center justify-center md:justify-start gap-6 pt-6 animate-fade-up" style={{ animationDelay: "0.5s" }}>
+                {[
+                  { text: "100% DBS Checked" },
+                  { text: "Fully Insured" },
+                  { text: "24/7 Support" }
+                ].map((item, idx) => (
+                  <div key={idx} className="flex items-center gap-2.5 px-4 py-2 rounded-lg bg-white/5 backdrop-blur-sm border border-white/10">
+                    <HiCheckCircle className="h-5 w-5 text-white/90 flex-shrink-0" />
+                    <span className="text-sm font-medium text-white/90">{item.text}</span>
+                  </div>
+                ))}
+              </div>
             </div>
 
-            {/* Stats Cards */}
-            <div
-              className="hidden lg:block animate-fade-up"
-              style={{ animationDelay: "0.3s" }}
-            >
-              <div className="grid grid-cols-2 gap-4">
-                <div className="bg-card/95 backdrop-blur-md rounded-2xl p-6 shadow-xl border border-border/50 hover:scale-105 transition-transform duration-300">
-                  <div className="flex items-center gap-3 mb-3">
-                    <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-primary text-primary-foreground">
-                      <Shield className="h-6 w-6" />
-                    </div>
+            {/* Right Column: Premium Image Presentation */}
+            <div className="hidden md:flex items-center justify-center animate-fade-up" style={{ animationDelay: "0.3s" }}>
+              <div className="relative w-full max-w-2xl lg:max-w-3xl xl:max-w-4xl">
+                {/* Main Image Container */}
+                <div className="relative group">
+                  {/* Image with Premium Styling */}
+                  <div className="relative rounded-3xl overflow-hidden shadow-[0_25px_50px_-12px_rgba(0,0,0,0.5)] border-4 border-white/30 transform group-hover:scale-[1.02] transition-all duration-700">
+                    <img
+                      src={heroImage}
+                      alt="SafeGuard Transport professional school bus service with happy children in school uniforms boarding a white Mercedes-Benz school bus in a safe residential neighborhood"
+                      className="w-full h-auto object-cover"
+                    />
+                    {/* Subtle Gradient Overlay */}
+                    <div className="absolute inset-0 bg-gradient-to-t from-primary/30 via-transparent to-transparent" />
                   </div>
-                  <p className="text-3xl font-bold text-foreground">100%</p>
-                  <p className="text-sm text-muted-foreground">
-                    DBS Checked Drivers
-                  </p>
-                </div>
-
-                <div className="bg-card/95 backdrop-blur-md rounded-2xl p-6 shadow-xl border border-border/50 hover:scale-105 transition-transform duration-300 mt-8">
-                  <div className="flex items-center gap-3 mb-3">
-                    <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-secondary text-secondary-foreground">
-                      <Users className="h-6 w-6" />
-                    </div>
-                  </div>
-                  <p className="text-3xl font-bold text-foreground">500+</p>
-                  <p className="text-sm text-muted-foreground">
-                    Families Trust Us
-                  </p>
-                </div>
-
-                <div className="bg-card/95 backdrop-blur-md rounded-2xl p-6 shadow-xl border border-border/50 hover:scale-105 transition-transform duration-300">
-                  <div className="flex items-center gap-3 mb-3">
-                    <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-accent text-accent-foreground">
-                      <Clock className="h-6 w-6" />
-                    </div>
-                  </div>
-                  <p className="text-3xl font-bold text-foreground">99%</p>
-                  <p className="text-sm text-muted-foreground">On-Time Rate</p>
-                </div>
-
-                <div className="bg-card/95 backdrop-blur-md rounded-2xl p-6 shadow-xl border border-border/50 hover:scale-105 transition-transform duration-300 mt-8">
-                  <div className="flex items-center gap-3 mb-3">
-                    <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-primary text-primary-foreground">
-                      <Star className="h-6 w-6" />
-                    </div>
-                  </div>
-                  <p className="text-3xl font-bold text-foreground">5.0</p>
-                  <p className="text-sm text-muted-foreground">
-                    Customer Rating
-                  </p>
+                  
+                  {/* Decorative Accent Elements */}
+                  <div className="absolute -top-6 -right-6 w-32 h-32 bg-white/10 rounded-full blur-3xl opacity-60" />
+                  <div className="absolute -bottom-6 -left-6 w-40 h-40 bg-secondary/15 rounded-full blur-3xl opacity-60" />
+                  
+                  {/* Corner Accents */}
+                  <div className="absolute top-0 left-0 w-20 h-20 border-t-4 border-l-4 border-white/20 rounded-tl-3xl" />
+                  <div className="absolute bottom-0 right-0 w-20 h-20 border-b-4 border-r-4 border-white/20 rounded-br-3xl" />
                 </div>
               </div>
             </div>
-          </div>
-
-          {/* Mobile Stats Bar */}
-          <div
-            className="lg:hidden mt-12 grid grid-cols-2 sm:grid-cols-4 gap-4 animate-fade-up"
-            style={{ animationDelay: "0.4s" }}
-          >
-            {[
-              { value: "100%", label: "DBS Checked" },
-              { value: "500+", label: "Families" },
-              { value: "99%", label: "On-Time" },
-              { value: "5.0★", label: "Rating" },
-            ].map((stat) => (
-              <div
-                key={stat.label}
-                className="bg-card/90 backdrop-blur-sm rounded-xl p-4 text-center border border-border/50"
-              >
-                <p className="text-xl font-bold text-foreground">
-                  {stat.value}
-                </p>
-                <p className="text-xs text-muted-foreground">{stat.label}</p>
-              </div>
-            ))}
           </div>
         </div>
 
-        {/* Scroll Indicator */}
-        <div className="absolute bottom-8 left-1/2 -translate-x-1/2 animate-bounce hidden md:block">
-          <div className="w-6 h-10 rounded-full border-2 border-primary-foreground/30 flex items-start justify-center p-2">
-            <div className="w-1 h-2 bg-primary-foreground/50 rounded-full" />
+        {/* Elegant Scroll Indicator */}
+        <div className="absolute bottom-10 left-1/2 -translate-x-1/2 animate-bounce hidden md:block">
+          <div className="w-7 h-12 rounded-full border-2 border-white/30 flex items-start justify-center p-2 backdrop-blur-md bg-white/5">
+            <div className="w-1.5 h-4 bg-white/80 rounded-full" />
           </div>
         </div>
       </section>
@@ -300,7 +278,7 @@ export default function HomePage() {
               <Button asChild size="lg">
                 <Link to="/services">
                   View All Services
-                  <ArrowRight className="h-5 w-5" />
+                  <HiArrowRight className="h-5 w-5" />
                 </Link>
               </Button>
             </div>
@@ -339,7 +317,7 @@ export default function HomePage() {
           <div className="mx-auto max-w-4xl text-center animate-fade-up">
             <div className="mb-6 flex justify-center">
               <div className="flex h-16 w-16 items-center justify-center rounded-full bg-primary-foreground/20">
-                <Heart className="h-8 w-8" />
+                <HiHeart className="h-8 w-8" />
               </div>
             </div>
             <h2 className="text-3xl font-bold sm:text-4xl mb-6">Our Promise</h2>
@@ -371,7 +349,7 @@ export default function HomePage() {
               >
                 <div className="mb-4 flex gap-1">
                   {[...Array(5)].map((_, i) => (
-                    <Star
+                    <HiStar
                       key={i}
                       className="h-4 w-4 fill-warning text-warning"
                     />
@@ -409,11 +387,11 @@ export default function HomePage() {
               <Button
                 asChild
                 size="xl"
-                className="bg-card text-primary hover:bg-card/90"
+                className="bg-accent text-accent-foreground hover:bg-accent/90 shadow-2xl hover:shadow-3xl hover:scale-105 transition-all duration-300"
               >
                 <Link to="/contact">
                   Contact Us Now
-                  <ArrowRight className="h-5 w-5" />
+                  <HiArrowRight className="h-5 w-5" />
                 </Link>
               </Button>
               <Button

@@ -1,38 +1,38 @@
 import { Link } from "react-router-dom";
 import {
-  Shield,
-  BadgeCheck,
-  Heart,
-  FileCheck,
-  Users,
-  Accessibility,
-  Brain,
-  Award,
-  ArrowRight,
-  CheckCircle,
-} from "lucide-react";
+  HiShieldCheck,
+  HiBadgeCheck,
+  HiHeart,
+  HiClipboardCheck,
+  HiUsers,
+  HiUserGroup,
+  HiAcademicCap,
+  HiAcademicCap as Award,
+  HiArrowRight,
+  HiCheckCircle,
+} from "react-icons/hi";
 import { Button } from "@/components/ui/button";
 import { SEOHead } from "@/components/SEOHead";
 import { Layout } from "@/components/Layout";
 
 const driverStandards = [
   {
-    icon: BadgeCheck,
+    icon: HiBadgeCheck,
     title: "Enhanced DBS Checks",
     description: "All drivers undergo enhanced Disclosure and Barring Service checks to ensure the safety of our passengers.",
   },
   {
-    icon: FileCheck,
+    icon: HiClipboardCheck,
     title: "Licensed Professionals",
     description: "Our drivers hold all required licences and certifications for passenger transport.",
   },
   {
-    icon: Shield,
+    icon: HiShieldCheck,
     title: "Safeguarding Training",
     description: "Comprehensive safeguarding training ensures our team can identify and respond to any concerns.",
   },
   {
-    icon: Heart,
+    icon: HiHeart,
     title: "First Aid Certified",
     description: "All drivers are trained in first aid, ready to respond to any medical situation.",
   },
@@ -40,17 +40,17 @@ const driverStandards = [
 
 const assistantSupport = [
   {
-    icon: Accessibility,
+    icon: HiUserGroup,
     title: "SEND Passengers",
     description: "Trained assistants who understand the needs of passengers with special educational needs and disabilities.",
   },
   {
-    icon: Users,
+    icon: HiUsers,
     title: "Elderly & Mobility Support",
     description: "Patient, compassionate support for elderly passengers and those with mobility requirements.",
   },
   {
-    icon: Brain,
+    icon: HiAcademicCap,
     title: "Behavioural & Communication",
     description: "Skilled in supporting passengers with behavioural or communication needs with understanding and patience.",
   },
@@ -81,7 +81,7 @@ export default function SafetyPage() {
         <div className="container-custom">
           <div className="mx-auto max-w-3xl text-center animate-fade-up">
             <div className="inline-flex items-center gap-2 rounded-full bg-primary/10 px-4 py-2 text-sm font-medium text-primary mb-6">
-              <Shield className="h-4 w-4" />
+              <HiShieldCheck className="h-4 w-4" />
               Your Safety, Our Priority
             </div>
             <h1 className="text-4xl font-bold text-foreground sm:text-5xl mb-6">
@@ -199,7 +199,7 @@ export default function SafetyPage() {
           <div className="mx-auto max-w-3xl text-center animate-fade-up">
             <div className="mb-6 flex justify-center">
               <div className="flex h-16 w-16 items-center justify-center rounded-full bg-primary-foreground/20">
-                <Shield className="h-8 w-8" />
+                <HiShieldCheck className="h-8 w-8" />
               </div>
             </div>
             <h2 className="text-3xl font-bold sm:text-4xl mb-4">
@@ -208,10 +208,10 @@ export default function SafetyPage() {
             <p className="text-lg text-primary-foreground/90 mb-8">
               Experience the peace of mind that comes with knowing your loved ones are in safe hands. Contact us today to learn more about our safety commitment.
             </p>
-            <Button asChild size="lg" className="bg-card text-primary hover:bg-card/90">
+            <Button asChild size="lg" className="bg-accent text-accent-foreground hover:bg-accent/90 shadow-lg hover:shadow-xl transition-all duration-300">
               <Link to="/contact">
                 Get in Touch
-                <ArrowRight className="h-5 w-5" />
+                <HiArrowRight className="h-5 w-5" />
               </Link>
             </Button>
           </div>

@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Phone, Mail, MapPin, Clock, Send, CheckCircle } from "lucide-react";
+import { HiPhone, HiMail, HiLocationMarker, HiClock, HiPaperAirplane, HiCheckCircle } from "react-icons/hi";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
@@ -10,24 +10,24 @@ import { useToast } from "@/hooks/use-toast";
 
 const contactInfo = [
   {
-    icon: Phone,
+    icon: HiPhone,
     title: "Phone",
     content: "+252 612121368",
     href: "tel:+252612121368",
   },
   {
-    icon: Mail,
+    icon: HiMail,
     title: "Email",
     content: "maxameds486@gmail.com",
     href: "mailto:info@safeguardtransport.co.uk",
   },
   {
-    icon: MapPin,
+    icon: HiLocationMarker,
     title: "Service Area",
     content: "London & Surrounding Regions",
   },
   {
-    icon: Clock,
+    icon: HiClock,
     title: "Office Hours",
     content: "Mon-Fri: 8am - 6pm",
   },
@@ -108,7 +108,7 @@ export default function ContactPage() {
         <div className="container-custom">
           <div className="mx-auto max-w-3xl text-center animate-fade-up">
             <div className="inline-flex items-center gap-2 rounded-full bg-primary/10 px-4 py-2 text-sm font-medium text-primary mb-6">
-              <Mail className="h-4 w-4" />
+              <HiMail className="h-4 w-4" />
               Get in Touch
             </div>
             <h1 className="text-4xl font-bold text-foreground sm:text-5xl mb-6">
@@ -137,7 +137,7 @@ export default function ContactPage() {
                   <div className="text-center py-12">
                     <div className="flex justify-center mb-4">
                       <div className="flex h-16 w-16 items-center justify-center rounded-full bg-secondary/20 text-secondary">
-                        <CheckCircle className="h-8 w-8" />
+                        <HiCheckCircle className="h-8 w-8" />
                       </div>
                     </div>
                     <h3 className="text-xl font-semibold text-foreground mb-2">
@@ -215,7 +215,7 @@ export default function ContactPage() {
                       ) : (
                         <>
                           Send Message
-                          <Send className="h-5 w-5" />
+                          <HiPaperAirplane className="h-5 w-5" />
                         </>
                       )}
                     </Button>
@@ -302,10 +302,10 @@ export default function ContactPage() {
             <Button
               asChild
               size="xl"
-              className="bg-card text-primary hover:bg-card/90"
+              className="bg-accent text-accent-foreground hover:bg-accent/90 shadow-lg hover:shadow-xl transition-all duration-300"
             >
               <a href="tel:+441234567890">
-                <Phone className="h-5 w-5" />
+                <HiPhone className="h-5 w-5" />
                 Call +252 612121368
               </a>
             </Button>

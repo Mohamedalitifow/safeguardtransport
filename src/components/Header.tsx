@@ -1,6 +1,6 @@
 import { Link, useLocation } from "react-router-dom";
 import { useState } from "react";
-import { Menu, X, Shield, Phone } from "lucide-react";
+import { HiMenu, HiX, HiShieldCheck, HiPhone } from "react-icons/hi";
 import { Button } from "@/components/ui/button";
 
 const navLinks = [
@@ -26,7 +26,7 @@ export function Header() {
             className="flex items-center gap-2 transition-opacity hover:opacity-80"
           >
             <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-primary">
-              <Shield className="h-6 w-6 text-primary-foreground" />
+              <HiShieldCheck className="h-6 w-6 text-primary-foreground" />
             </div>
             <div className="flex flex-col">
               <span className="text-lg font-bold leading-tight text-foreground">
@@ -61,7 +61,7 @@ export function Header() {
               href="tel:+441234567890"
               className="flex items-center gap-2 text-sm font-medium text-foreground"
             >
-              <Phone className="h-4 w-4 text-primary" />
+              <HiPhone className="h-4 w-4 text-primary" />
               <span>252612121368</span>
             </a>
             <Button asChild size="sm">
@@ -75,7 +75,7 @@ export function Header() {
             onClick={() => setIsOpen(!isOpen)}
             aria-label="Toggle menu"
           >
-            {isOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
+            {isOpen ? <HiX className="h-5 w-5" /> : <HiMenu className="h-5 w-5" />}
           </button>
         </div>
       </div>
@@ -103,7 +103,7 @@ export function Header() {
                 href="tel:+441234567890"
                 className="flex items-center gap-2 text-sm font-medium text-foreground"
               >
-                <Phone className="h-4 w-4 text-primary" />
+                <HiPhone className="h-4 w-4 text-primary" />
                 <span>+252 612121368 </span>
               </a>
               <Button asChild className="w-full">

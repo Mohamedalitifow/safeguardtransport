@@ -1,27 +1,27 @@
 import { Link } from "react-router-dom";
-import { Shield, Heart, CheckCircle, Award, Users, Target, ArrowRight } from "lucide-react";
+import { HiShieldCheck, HiHeart, HiCheckCircle, HiAcademicCap, HiUsers, HiFlag, HiArrowRight, HiUser } from "react-icons/hi";
 import { Button } from "@/components/ui/button";
 import { SEOHead } from "@/components/SEOHead";
 import { Layout } from "@/components/Layout";
 
 const values = [
   {
-    icon: Shield,
+    icon: HiShieldCheck,
     title: "Safety First",
     description: "Safety is non-negotiable. Every vehicle, driver, and journey is held to the highest safety standards.",
   },
   {
-    icon: CheckCircle,
+    icon: HiCheckCircle,
     title: "Reliability",
     description: "We understand the importance of punctuality. You can count on us to be there when you need us.",
   },
   {
-    icon: Heart,
+    icon: HiHeart,
     title: "Respect & Dignity",
     description: "Every passenger is valued. We treat all individuals with compassion and understanding.",
   },
   {
-    icon: Award,
+    icon: HiAcademicCap,
     title: "Honesty & Transparency",
     description: "Clear communication, fair pricing, and no hidden charges. Trust is earned through transparency.",
   },
@@ -50,7 +50,7 @@ export default function AboutPage() {
         <div className="container-custom">
           <div className="mx-auto max-w-3xl text-center animate-fade-up">
             <div className="inline-flex items-center gap-2 rounded-full bg-primary/10 px-4 py-2 text-sm font-medium text-primary mb-6">
-              <Users className="h-4 w-4" />
+              <HiUsers className="h-4 w-4" />
               Who We Are
             </div>
             <h1 className="text-4xl font-bold text-foreground sm:text-5xl mb-6">
@@ -88,7 +88,7 @@ export default function AboutPage() {
               <div className="rounded-2xl bg-gradient-to-br from-primary/10 to-secondary/10 p-8">
                 <div className="space-y-4">
                   <div className="flex h-14 w-14 items-center justify-center rounded-xl bg-primary text-primary-foreground">
-                    <Target className="h-7 w-7" />
+                    <HiFlag className="h-7 w-7" />
                   </div>
                   <h3 className="text-2xl font-bold text-foreground">Our Mission</h3>
                   <p className="text-lg text-muted-foreground leading-relaxed">
@@ -141,7 +141,7 @@ export default function AboutPage() {
                     key={feature}
                     className="flex items-center gap-3 rounded-lg bg-card p-4 shadow-soft"
                   >
-                    <CheckCircle className="h-5 w-5 shrink-0 text-secondary" />
+                    <HiCheckCircle className="h-5 w-5 shrink-0 text-secondary" />
                     <span className="text-sm font-medium text-foreground">{feature}</span>
                   </div>
                 ))}
@@ -164,7 +164,7 @@ export default function AboutPage() {
               <Button asChild size="lg">
                 <Link to="/safety">
                   Learn About Our Standards
-                  <ArrowRight className="h-5 w-5" />
+                  <HiArrowRight className="h-5 w-5" />
                 </Link>
               </Button>
             </div>
@@ -183,7 +183,7 @@ export default function AboutPage() {
               Experience the difference of transport services built on trust, care, and professionalism.
             </p>
             <div className="flex flex-col gap-4 sm:flex-row sm:justify-center">
-              <Button asChild size="lg" className="bg-card text-primary hover:bg-card/90">
+              <Button asChild size="lg" className="bg-accent text-accent-foreground hover:bg-accent/90 shadow-lg hover:shadow-xl transition-all duration-300">
                 <Link to="/contact">Get in Touch</Link>
               </Button>
               <Button asChild size="lg" variant="ghost" className="text-primary-foreground border-2 border-primary-foreground/30 hover:bg-primary-foreground/10">

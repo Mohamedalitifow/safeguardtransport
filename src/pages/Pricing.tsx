@@ -1,21 +1,22 @@
 import { Link } from "react-router-dom";
 import {
-  CheckCircle,
-  ArrowRight,
-  GraduationCap,
-  Calendar,
-  Users,
-  Accessibility,
-  Building2,
-  FileText,
-} from "lucide-react";
+  HiCheckCircle,
+  HiArrowRight,
+  HiAcademicCap,
+  HiCalendar,
+  HiUsers,
+  HiUserGroup,
+  HiOfficeBuilding,
+  HiDocumentText,
+} from "react-icons/hi";
 import { Button } from "@/components/ui/button";
+import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import { SEOHead } from "@/components/SEOHead";
 import { Layout } from "@/components/Layout";
 
 const pricingCategories = [
   {
-    icon: GraduationCap,
+    icon: HiAcademicCap,
     title: "Daily School Routes",
     description: "Regular home-to-school transport with consistent schedules and reliable service.",
     features: [
@@ -26,7 +27,7 @@ const pricingCategories = [
     ],
   },
   {
-    icon: Calendar,
+    icon: HiCalendar,
     title: "Weekly/Monthly Travel",
     description: "Ongoing transport arrangements with discounted rates for regular bookings.",
     features: [
@@ -37,7 +38,7 @@ const pricingCategories = [
     ],
   },
   {
-    icon: Building2,
+    icon: HiOfficeBuilding,
     title: "One-Off Bookings",
     description: "Single journey bookings for medical appointments, special events, or occasional needs.",
     features: [
@@ -48,7 +49,7 @@ const pricingCategories = [
     ],
   },
   {
-    icon: Users,
+    icon: HiUsers,
     title: "Group Transport",
     description: "Cost-effective transport for groups, community organisations, and day centres.",
     features: [
@@ -59,7 +60,7 @@ const pricingCategories = [
     ],
   },
   {
-    icon: Accessibility,
+    icon: HiUserGroup,
     title: "Assisted & SEND Transport",
     description: "Specialist transport with trained journey assistants for passengers with additional needs.",
     features: [
@@ -70,7 +71,7 @@ const pricingCategories = [
     ],
   },
   {
-    icon: FileText,
+    icon: HiDocumentText,
     title: "Contract Services",
     description: "Bespoke transport contracts for schools, councils, and organisations.",
     features: [
@@ -96,7 +97,7 @@ export default function PricingPage() {
         <div className="container-custom">
           <div className="mx-auto max-w-3xl text-center animate-fade-up">
             <div className="inline-flex items-center gap-2 rounded-full bg-primary/10 px-4 py-2 text-sm font-medium text-primary mb-6">
-              <CheckCircle className="h-4 w-4" />
+              <HiCheckCircle className="h-4 w-4" />
               Transparent Pricing
             </div>
             <h1 className="text-4xl font-bold text-foreground sm:text-5xl mb-6">
@@ -106,7 +107,7 @@ export default function PricingPage() {
               We believe in transparent pricing with no hidden charges. Every quote is tailored to your specific needs.
             </p>
             <div className="inline-flex items-center gap-2 rounded-xl bg-card border border-border px-6 py-4 shadow-medium">
-              <CheckCircle className="h-5 w-5 text-secondary" />
+              <HiCheckCircle className="h-5 w-5 text-secondary" />
               <span className="font-medium text-foreground">No unexpected charges. Full quotes provided.</span>
             </div>
           </div>
@@ -138,7 +139,7 @@ export default function PricingPage() {
                 <ul className="space-y-2">
                   {category.features.map((feature) => (
                     <li key={feature} className="flex items-center gap-2 text-sm">
-                      <CheckCircle className="h-4 w-4 shrink-0 text-secondary" />
+                      <HiCheckCircle className="h-4 w-4 shrink-0 text-secondary" />
                       <span className="text-muted-foreground">{feature}</span>
                     </li>
                   ))}
@@ -170,7 +171,7 @@ export default function PricingPage() {
                   "Number of passengers",
                 ].map((item) => (
                   <li key={item} className="flex items-center gap-3">
-                    <CheckCircle className="h-5 w-5 shrink-0 text-primary" />
+                    <HiCheckCircle className="h-5 w-5 shrink-0 text-primary" />
                     <span className="text-muted-foreground">{item}</span>
                   </li>
                 ))}
@@ -187,7 +188,7 @@ export default function PricingPage() {
                   <Button asChild size="lg" className="w-full">
                     <Link to="/contact">
                       Request a Quote
-                      <ArrowRight className="h-5 w-5" />
+                      <HiArrowRight className="h-5 w-5" />
                     </Link>
                   </Button>
                   <p className="text-center text-sm text-muted-foreground">
@@ -207,7 +208,7 @@ export default function PricingPage() {
             <h2 className="text-3xl font-bold text-foreground sm:text-4xl mb-8 text-center">
               Frequently Asked Questions
             </h2>
-            <div className="space-y-4">
+            <Accordion type="single" collapsible className="w-full space-y-4">
               {[
                 {
                   q: "Are there any hidden charges?",
@@ -225,13 +226,21 @@ export default function PricingPage() {
                   q: "Is there a minimum booking requirement?",
                   a: "No, we accommodate both one-off journeys and ongoing arrangements. Every booking is welcome.",
                 },
-              ].map((faq) => (
-                <div key={faq.q} className="rounded-xl bg-card p-6 shadow-soft">
-                  <h3 className="font-semibold text-foreground mb-2">{faq.q}</h3>
-                  <p className="text-muted-foreground">{faq.a}</p>
-                </div>
+              ].map((faq, index) => (
+                <AccordionItem 
+                  key={faq.q} 
+                  value={`item-${index}`}
+                  className="rounded-xl bg-card border-0 shadow-soft px-6"
+                >
+                  <AccordionTrigger className="font-semibold text-foreground hover:no-underline py-6">
+                    {faq.q}
+                  </AccordionTrigger>
+                  <AccordionContent className="text-muted-foreground pb-6">
+                    {faq.a}
+                  </AccordionContent>
+                </AccordionItem>
               ))}
-            </div>
+            </Accordion>
           </div>
         </div>
       </section>
@@ -246,10 +255,10 @@ export default function PricingPage() {
             <p className="text-lg text-secondary-foreground/90 mb-8">
               Contact us today for a free, no-obligation quote. We're here to help find the right solution for you.
             </p>
-            <Button asChild size="lg" className="bg-card text-secondary hover:bg-card/90">
+            <Button asChild size="lg" className="bg-accent text-accent-foreground hover:bg-accent/90 shadow-lg hover:shadow-xl transition-all duration-300">
               <Link to="/contact">
                 Contact Us Now
-                <ArrowRight className="h-5 w-5" />
+                <HiArrowRight className="h-5 w-5" />
               </Link>
             </Button>
           </div>

@@ -1,6 +1,6 @@
 import { Link, useLocation } from "react-router-dom";
 import { useEffect } from "react";
-import { Home, ArrowLeft } from "lucide-react";
+import { HiHome, HiArrowLeft } from "react-icons/hi";
 import { Button } from "@/components/ui/button";
 import { SEOHead } from "@/components/SEOHead";
 import { Layout } from "@/components/Layout";
@@ -29,13 +29,13 @@ export default function NotFound() {
             <div className="flex flex-col gap-4 sm:flex-row sm:justify-center">
               <Button asChild size="lg">
                 <Link to="/">
-                  <Home className="h-5 w-5" />
+                  <HiHome className="h-5 w-5" />
                   Go Home
                 </Link>
               </Button>
               <Button asChild size="lg" variant="outline">
                 <Link to="/contact">
-                  <ArrowLeft className="h-5 w-5" />
+                  <HiArrowLeft className="h-5 w-5" />
                   Contact Us
                 </Link>
               </Button>

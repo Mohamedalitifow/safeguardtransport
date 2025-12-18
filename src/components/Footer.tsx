@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
-import { Shield, Phone, Mail, MapPin, Facebook, Twitter, Linkedin } from "lucide-react";
+import { HiShieldCheck, HiPhone, HiMail, HiLocationMarker } from "react-icons/hi";
+import { FaFacebook, FaTwitter, FaLinkedin } from "react-icons/fa";
 
 const footerLinks = {
   services: [
@@ -25,7 +26,7 @@ export function Footer() {
           <div className="space-y-4">
             <Link to="/" className="flex items-center gap-2">
               <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-primary">
-                <Shield className="h-6 w-6 text-primary-foreground" />
+                <HiShieldCheck className="h-6 w-6 text-primary-foreground" />
               </div>
               <div className="flex flex-col">
                 <span className="text-lg font-bold leading-tight text-foreground">SafeGuard</span>
@@ -41,21 +42,21 @@ export function Footer() {
                 className="flex h-9 w-9 items-center justify-center rounded-lg bg-muted text-muted-foreground transition-colors hover:bg-primary hover:text-primary-foreground"
                 aria-label="Facebook"
               >
-                <Facebook className="h-4 w-4" />
+                <FaFacebook className="h-4 w-4" />
               </a>
               <a
                 href="#"
                 className="flex h-9 w-9 items-center justify-center rounded-lg bg-muted text-muted-foreground transition-colors hover:bg-primary hover:text-primary-foreground"
                 aria-label="Twitter"
               >
-                <Twitter className="h-4 w-4" />
+                <FaTwitter className="h-4 w-4" />
               </a>
               <a
                 href="#"
                 className="flex h-9 w-9 items-center justify-center rounded-lg bg-muted text-muted-foreground transition-colors hover:bg-primary hover:text-primary-foreground"
                 aria-label="LinkedIn"
               >
-                <Linkedin className="h-4 w-4" />
+                <FaLinkedin className="h-4 w-4" />
               </a>
             </div>
           </div>
@@ -103,7 +104,7 @@ export function Footer() {
                   href="tel:+252612121368"
                   className="flex items-start gap-3 text-sm text-muted-foreground transition-colors hover:text-primary"
                 >
-                  <Phone className="h-4 w-4 mt-0.5 shrink-0" />
+                  <HiPhone className="h-4 w-4 mt-0.5 shrink-0" />
                   <span>+252612121368</span>
                 </a>
               </li>
@@ -112,13 +113,13 @@ export function Footer() {
                   href="mailto:info@safeguardtransport.co.uk"
                   className="flex items-start gap-3 text-sm text-muted-foreground transition-colors hover:text-primary"
                 >
-                  <Mail className="h-4 w-4 mt-0.5 shrink-0" />
+                  <HiMail className="h-4 w-4 mt-0.5 shrink-0" />
                   <span>info@safeguardtransport.co.uk</span>
                 </a>
               </li>
               <li>
                 <div className="flex items-start gap-3 text-sm text-muted-foreground">
-                  <MapPin className="h-4 w-4 mt-0.5 shrink-0" />
+                  <HiLocationMarker className="h-4 w-4 mt-0.5 shrink-0" />
                   <span>London & Surrounding Regions</span>
                 </div>
               </li>
