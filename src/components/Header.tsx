@@ -1,7 +1,8 @@
 import { Link, useLocation } from "react-router-dom";
 import { useState } from "react";
-import { HiMenu, HiX, HiShieldCheck, HiPhone } from "react-icons/hi";
+import { HiMenu, HiX,  HiPhone } from "react-icons/hi";
 import { Button } from "@/components/ui/button";
+import logo from "../assets/Logo.svg";
 
 const navLinks = [
   { name: "Home", href: "/" },
@@ -25,17 +26,10 @@ export function Header() {
             to="/"
             className="flex items-center gap-2 transition-opacity hover:opacity-80"
           >
-            <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-primary">
-              <HiShieldCheck className="h-6 w-6 text-primary-foreground" />
-            </div>
-            <div className="flex flex-col">
-              <span className="text-lg font-bold leading-tight text-foreground">
-                SafeGuard
-              </span>
-              <span className="text-xs font-medium text-muted-foreground">
-                Transport
-              </span>
-            </div>
+
+            <img src={logo} alt="SafeGuard Transport Logo" className="h-12 w-auto md:h-16" />
+       
+          
           </Link>
 
           {/* Desktop Navigation */}
@@ -58,11 +52,11 @@ export function Header() {
           {/* Desktop CTA */}
           <div className="hidden items-center gap-3 lg:flex">
             <a
-              href="tel:+441234567890"
+              href="tel:+252612121368"
               className="flex items-center gap-2 text-sm font-medium text-foreground"
             >
               <HiPhone className="h-4 w-4 text-primary" />
-              <span>252612121368</span>
+              <span>+252 612 121 368</span>
             </a>
             <Button asChild size="sm">
               <Link to="/contact">Get a Quote</Link>

@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
-import { HiShieldCheck, HiPhone, HiMail, HiLocationMarker } from "react-icons/hi";
+import { HiPhone, HiMail, HiLocationMarker } from "react-icons/hi";
 import { FaFacebook, FaTwitter, FaLinkedin } from "react-icons/fa";
+import logo from "../assets/Logo.svg";
 
 const footerLinks = {
   services: [
@@ -24,14 +25,8 @@ export function Footer() {
         <div className="grid gap-12 md:grid-cols-2 lg:grid-cols-4">
           {/* Brand */}
           <div className="space-y-4">
-            <Link to="/" className="flex items-center gap-2">
-              <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-primary">
-                <HiShieldCheck className="h-6 w-6 text-primary-foreground" />
-              </div>
-              <div className="flex flex-col">
-                <span className="text-lg font-bold leading-tight text-foreground">SafeGuard</span>
-                <span className="text-xs font-medium text-muted-foreground">Transport</span>
-              </div>
+            <Link to="/" className="flex items-center transition-opacity hover:opacity-80">
+              <img src={logo} alt="SafeGuard Transport Logo" className="h-12 w-auto" />
             </Link>
             <p className="text-sm text-muted-foreground leading-relaxed">
               Providing safe, reliable, and compassionate transport services across London and surrounding regions.

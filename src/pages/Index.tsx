@@ -108,12 +108,7 @@ export default function HomePage() {
             {/* Left Column: Text Content */}
             <div className="text-center md:text-left space-y-8">
               {/* Premium Badge */}
-              <div className="inline-flex items-center gap-2.5 rounded-full bg-white/10 backdrop-blur-xl border border-white/20 px-6 py-3 text-sm font-semibold text-white shadow-xl animate-fade-up">
-                <div className="flex h-6 w-6 items-center justify-center rounded-full bg-white/20">
-                  <HiShieldCheck className="h-3.5 w-3.5" />
-                </div>
-                <span className="tracking-wide">Trusted by 500+ Families Across London</span>
-              </div>
+             
 
               {/* Main Heading with Enhanced Typography */}
               <div className="space-y-4 animate-fade-up" style={{ animationDelay: "0.1s" }}>
