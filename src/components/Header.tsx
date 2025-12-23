@@ -18,7 +18,7 @@ export function Header() {
   const location = useLocation();
 
   return (
-    <header className="sticky top-0 z-50 w-full border-b border-border bg-card/95 backdrop-blur supports-[backdrop-filter]:bg-card/80">
+    <header className="sticky top-0 z-50 w-full border-b border-border bg-card supports-[backdrop-filter]:bg-card/95 supports-[backdrop-filter]:backdrop-blur">
       <div className="container-custom">
         <div className="flex h-16 items-center justify-between md:h-20">
           {/* Logo */}
