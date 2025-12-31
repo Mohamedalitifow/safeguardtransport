@@ -192,7 +192,7 @@ export default function PricingPage() {
                     </Link>
                   </Button>
                   <p className="text-center text-sm text-muted-foreground">
-                    Or call us: <a href="tel:+441234567890" className="font-medium text-primary hover:underline">0123 456 7890</a>
+                    Or call us: <a href="tel:+447851843396" className="font-medium text-primary hover:underline">+44 7851 843396</a>
                   </p>
                 </div>
               </div>

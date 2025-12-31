@@ -223,260 +223,86 @@
 }
 
 /* ============================================
-   Samsung Internet Browser Compatibility Fixes
+   Minimal Responsive Fixes for Android/Samsung Only
    ============================================ */
 
-@layer base {
+/* Only apply fixes on mobile devices (max-width: 768px) */
+@media screen and (max-width: 768px) {
   /* Fix viewport height on Samsung devices */
   html {
     height: -webkit-fill-available;
-    scroll-behavior: smooth;
   }
   
   body {
     min-height: 100vh;
     min-height: -webkit-fill-available;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-    text-rendering: optimizeLegibility;
+    overflow-x: hidden;
+    width: 100%;
   }
   
-  /* Better font rendering and touch optimization */
-  * {
+  /* Prevent horizontal overflow */
+  .container-custom {
+    width: 100%;
+    max-width: 100%;
+    overflow-x: hidden;
+  }
+  
+  /* Ensure sections don't overflow */
+  section {
+    overflow-x: hidden;
+    width: 100%;
+  }
+  
+  /* Ensure images are responsive */
+  img {
+    max-width: 100%;
+    height: auto;
+  }
+  
+  /* Make fixed-width decorative elements responsive */
+  .w-\[500px\],
+  .h-\[500px\] {
+    width: 50vw !important;
+    height: 50vw !important;
+    max-width: 300px;
+    max-height: 300px;
+  }
+  
+  .w-\[400px\],
+  .h-\[400px\] {
+    width: 40vw !important;
+    height: 40vw !important;
+    max-width: 250px;
+    max-height: 250px;
+  }
+  
+  /* Fix backdrop filter fallback for Samsung Internet */
+  @supports not (backdrop-filter: blur(10px)) {
+    [class*="backdrop-blur"] {
+      background-color: rgba(255, 255, 255, 0.95);
+    }
+  }
+}
+
+/* Samsung Internet browser specific fixes - only on mobile */
+@media screen and (max-width: 768px) and (-webkit-min-device-pixel-ratio: 0) {
+  /* Better font rendering */
+  body {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    -webkit-text-size-adjust: 100%;
+    text-size-adjust: 100%;
+  }
+  
+  /* Touch optimization */
+  button, a {
+    touch-action: manipulation;
     -webkit-tap-highlight-color: transparent;
   }
   
-  /* Touch optimization for interactive elements */
-  button, a, [role="button"] {
-    touch-action: manipulation;
-  }
-  
-  /* Fix for gradient text on Samsung */
-  .gradient-text {
-    -webkit-background-clip: text;
-    background-clip: text;
-  }
-}
-
-/* Backdrop filter fallback for Samsung Internet */
-@supports not (backdrop-filter: blur(10px)) {
-  .backdrop-blur,
-  [class*="backdrop-blur"],
-  [class*="bg-card/95"],
-  [class*="bg-card/80"] {
-    background-color: rgba(255, 255, 255, 0.95) !important;
-  }
-}
-
-/* Enhanced backdrop filter support */
-@supports (-webkit-backdrop-filter: blur(10px)) or (backdrop-filter: blur(10px)) {
-  .backdrop-blur {
-    -webkit-backdrop-filter: blur(10px);
-    backdrop-filter: blur(10px);
-  }
-}
-
-/* Fix for sticky positioning on Samsung */
-.sticky {
-  position: -webkit-sticky;
-  position: sticky;
-}
-
-/* Safe area support for modern Samsung devices */
-@supports (padding: max(0px)) {
-  .container-custom {
-    padding-left: max(1rem, env(safe-area-inset-left));
-    padding-right: max(1rem, env(safe-area-inset-right));
-  }
-}
-
-/* Samsung Internet specific fixes */
-@media screen and (-webkit-min-device-pixel-ratio: 0) {
-  /* Fix for gradient rendering */
-  .bg-gradient-to-br,
-  .bg-gradient-to-r,
-  .bg-gradient-to-b {
-    -webkit-background-clip: padding-box;
-  }
-  
-  /* Fix for text rendering */
-  h1, h2, h3, h4, h5, h6 {
-    -webkit-font-smoothing: antialiased;
-  }
-  
-  /* Fix for flexbox on older Samsung browsers */
-  .flex {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-  }
-  
-  /* Fix for grid on Samsung Internet */
-  .grid {
-    display: -ms-grid;
-    display: grid;
-  }
-}
-
-/* Font loading optimization for Samsung - Note: Fonts are loaded via Google Fonts link in HTML */
-
-/* Additional Samsung Internet fixes */
-@supports (-webkit-appearance: none) {
-  /* Fix for CSS transforms on Samsung */
-  * {
-    -webkit-transform: translateZ(0);
-    transform: translateZ(0);
-  }
-  
-  /* Fix for will-change property */
-  .animate-fade-up,
-  .animate-fade-in,
-  .animate-scale-in,
-  .animate-float {
-    will-change: transform, opacity;
-    -webkit-backface-visibility: hidden;
-    backface-visibility: hidden;
-  }
-}
-
-/* Fix for image rendering on Samsung */
-img {
-  -webkit-user-select: none;
-  user-select: none;
-  -webkit-touch-callout: none;
-  image-rendering: -webkit-optimize-contrast;
-  image-rendering: crisp-edges;
-}
-
-/* Fix for overflow issues on Samsung */
-.overflow-hidden {
-  -webkit-overflow-scrolling: touch;
-}
-
-/* Fix for position fixed on Samsung */
-.fixed {
-  -webkit-transform: translateZ(0);
-  transform: translateZ(0);
-}
-
-/* Better text rendering for Samsung devices */
-body {
-  -webkit-text-size-adjust: 100%;
-  text-size-adjust: 100%;
-}
-
-/* Fix for CSS Grid gaps on Samsung Internet */
-.grid {
-  -ms-grid-columns: 1fr;
-  -ms-grid-rows: auto;
-}
-
-/* Fix for flexbox gaps on older Samsung browsers */
-.flex {
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-}
-
-/* Prevent text selection issues on Samsung */
-button, a {
-  -webkit-user-select: none;
-  user-select: none;
-}
-
-/* Fix for border-radius on Samsung */
-.rounded-lg,
-.rounded-xl,
-.rounded-2xl,
-.rounded-3xl {
-  -webkit-border-radius: inherit;
-  border-radius: inherit;
-}
-
-/* Fix for box-shadow rendering on Samsung */
-.shadow-md,
-.shadow-lg,
-.shadow-xl {
-  -webkit-box-shadow: inherit;
-  box-shadow: inherit;
-}
-
-/* Fix for min-h-screen on Samsung devices */
-.min-h-screen {
-  min-height: 100vh;
-  min-height: -webkit-fill-available;
-}
-
-/* Fix for gradient backgrounds on Samsung */
-.bg-gradient-to-br,
-.bg-gradient-to-r,
-.bg-gradient-to-b {
-  background-attachment: scroll;
-  -webkit-background-size: 100% 100%;
-  background-size: 100% 100%;
-}
-
-/* Fix for blur effects on Samsung Internet */
-.blur-\[100px\],
-.blur-\[50px\],
-[class*="blur-"] {
-  -webkit-filter: blur(100px);
-  filter: blur(100px);
-}
-
-/* Fix for opacity with backdrop on Samsung */
-.bg-white\/5,
-.bg-white\/10,
-[class*="/"] {
-  background-clip: padding-box;
-  -webkit-background-clip: padding-box;
-}
-
-/* Prevent layout shifts on Samsung */
-section {
-  contain: layout style paint;
-}
-
-/* Fix for absolute positioning on Samsung */
-.absolute {
-  -webkit-transform: translateZ(0);
-  transform: translateZ(0);
-}
-
-/* Better animation performance on Samsung */
-@keyframes fadeUp {
-  from {
-    opacity: 0;
-    -webkit-transform: translateY(30px) translateZ(0);
-    transform: translateY(30px) translateZ(0);
-  }
-  to {
-    opacity: 1;
-    -webkit-transform: translateY(0) translateZ(0);
-    transform: translateY(0) translateZ(0);
-  }
-}
-
-@keyframes scaleIn {
-  from {
-    opacity: 0;
-    -webkit-transform: scale(0.9) translateZ(0);
-    transform: scale(0.9) translateZ(0);
-  }
-  to {
-    opacity: 1;
-    -webkit-transform: scale(1) translateZ(0);
-    transform: scale(1) translateZ(0);
-  }
-}
-
-@keyframes float {
-  0%, 100% {
-    -webkit-transform: translateY(0) translateZ(0);
-    transform: translateY(0) translateZ(0);
-  }
-  50% {
-    -webkit-transform: translateY(-10px) translateZ(0);
-    transform: translateY(-10px) translateZ(0);
+  /* Fix sticky positioning */
+  .sticky {
+    position: -webkit-sticky;
+    position: sticky;
   }
 }

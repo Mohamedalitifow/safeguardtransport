@@ -96,26 +96,26 @@ export function Footer() {
             <ul className="space-y-3">
               <li>
                 <a
-                  href="tel:+252612121368"
+                  href="tel:+447851843396"
                   className="flex items-start gap-3 text-sm text-muted-foreground transition-colors hover:text-primary"
                 >
                   <HiPhone className="h-4 w-4 mt-0.5 shrink-0" />
-                  <span>+252612121368</span>
+                  <span>+44 7851 843396</span>
                 </a>
               </li>
               <li>
                 <a
-                  href="mailto:info@safeguardtransport.co.uk"
+                  href="mailto:info@safeguardtransport.uk"
                   className="flex items-start gap-3 text-sm text-muted-foreground transition-colors hover:text-primary"
                 >
                   <HiMail className="h-4 w-4 mt-0.5 shrink-0" />
-                  <span>info@safeguardtransport.co.uk</span>
+                  <span>info@safeguardtransport.uk</span>
                 </a>
               </li>
               <li>
                 <div className="flex items-start gap-3 text-sm text-muted-foreground">
                   <HiLocationMarker className="h-4 w-4 mt-0.5 shrink-0" />
-                  <span>London & Surrounding Regions</span>
+                  <span>80 Suite 209, Cumberland House, Scrabs Lane, London, United Kingdom, NW10 6RF</span>
                 </div>
               </li>
             </ul>

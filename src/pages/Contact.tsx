@@ -12,19 +12,19 @@ const contactInfo = [
   {
     icon: HiPhone,
     title: "Phone",
-    content: "+252 612121368",
-    href: "tel:+252612121368",
+    content: "+44 7851 843396",
+    href: "tel:+447851843396",
   },
   {
     icon: HiMail,
     title: "Email",
-    content: "maxameds486@gmail.com",
-    href: "mailto:info@safeguardtransport.co.uk",
+    content: "info@safeguardtransport.uk",
+    href: "mailto:info@safeguardtransport.uk",
   },
   {
     icon: HiLocationMarker,
-    title: "Service Area",
-    content: "London & Surrounding Regions",
+    title: "Address",
+    content: "80 Suite 209, Cumberland House, Scrabs Lane, London, United Kingdom, NW10 6RF",
   },
   {
     icon: HiClock,
@@ -58,7 +58,7 @@ export default function ContactPage() {
     setIsSubmitting(true);
 
     try {
-      const response = await fetch("https://formspree.io/f/xblnbayg", {
+      const response = await fetch("https://formspree.io/f/xjgkbgor", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -162,7 +162,7 @@ export default function ContactPage() {
                         <Input
                           id="name"
                           name="name"
-                          placeholder="John Smith"
+                          placeholder="Enter your full name"
                           value={formData.name}
                           onChange={handleChange}
                           required
@@ -174,7 +174,7 @@ export default function ContactPage() {
                           id="email"
                           name="email"
                           type="email"
-                          placeholder="john@example.com"
+                          placeholder="Enter your email address"
                           value={formData.email}
                           onChange={handleChange}
                           required
@@ -187,7 +187,7 @@ export default function ContactPage() {
                         id="phone"
                         name="phone"
                         type="tel"
-                        placeholder="0123 456 7890"
+                        placeholder="Enter your phone number"
                         value={formData.phone}
                         onChange={handleChange}
                       />
@@ -304,9 +304,9 @@ export default function ContactPage() {
               size="xl"
               className="bg-card text-primary hover:bg-card/90"
             >
-              <a href="tel:+441234567890">
+              <a href="tel:+447851843396">
                 <HiPhone className="h-5 w-5" />
-                Call +252 612121368
+                Call +44 7851 843396
               </a>
             </Button>
           </div>
