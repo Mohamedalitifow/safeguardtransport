@@ -61,7 +61,7 @@ const testimonials = [
     name: "James K.",
     role: "School Administrator",
     content:
-      "Reliable, professional, and always on time. They've been our trusted transport partner for over 3 years.",
+      "SafeGuard Transport has consistently delivered a reliable and professional service. Their communication is excellent, and student safety is clearly their top priority.",
   },
   {
     name: "Margaret T.",
@@ -70,6 +70,7 @@ const testimonials = [
       "The care and attention given to our elderly residents is exceptional. Highly recommended.",
   },
 ];
+
 
 export default function HomePage() {
   return (
